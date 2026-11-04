@@ -266,7 +266,7 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
 
   void openSearch() {
     setState(() {
-      currentPage = 2;
+      currentPage = 3;
       message = '';
     });
   }
@@ -378,6 +378,15 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
           onSelectCategory: selectCategory,
         );
       case 2:
+        return FavouritePage(
+          FavouriteSongs: FavouriteSongs,
+          currentSong: currentSong,
+          isPlaying: isPlaying,
+          isInFavourite: isInFavourite,
+          onPlaySong: playSong,
+          onToggleFavourite: toggleFavourite,
+        );
+      case 3:
         return SearchPage(
           controller: searchController,
           isLoading: isLoading,
@@ -388,15 +397,6 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
           isPlaying: isPlaying,
           isInFavourite: isInFavourite,
           onSearch: cariLagu,
-          onPlaySong: playSong,
-          onToggleFavourite: toggleFavourite,
-        );
-      case 3:
-        return FavouritePage(
-          FavouriteSongs: FavouriteSongs,
-          currentSong: currentSong,
-          isPlaying: isPlaying,
-          isInFavourite: isInFavourite,
           onPlaySong: playSong,
           onToggleFavourite: toggleFavourite,
         );
@@ -429,14 +429,12 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
     final List<IconData> icons = [
       Icons.home,
       Icons.grid_view,
-      Icons.search,
       Icons.favorite_border,
     ];
 
     final List<String> labels = [
       'Beranda',
       'Kategori',
-      'Search',
       'Favourite',
     ];
 

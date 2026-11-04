@@ -114,19 +114,11 @@ class _SearchPageState extends State<SearchPage> {
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (widget.errorMessage.isNotEmpty && widget.songs.isEmpty) {
-      return EmptyResultWidget(
-        icon: Icons.search_off,
-        title: widget.errorMessage,
-        subtitle: 'Coba kata kunci atau nama artis yang lain.',
-      );
-    }
-
     if (widget.songs.isEmpty) {
       return const EmptyResultWidget(
-        icon: Icons.library_music_outlined,
-        title: 'Cari lagu favoritmu',
-        subtitle: 'Masukkan judul lagu atau nama artis pada kolom pencarian.',
+        icon: Icons.search,
+        title: 'Cari lagu',
+        subtitle: 'Masukan nama musik atau nama artis',
       );
     }
 
