@@ -22,3 +22,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// Folder pages sebagai 1 halaman per file
+// Folder widgets sebagai "Reuseable Widgets"

@@ -274,7 +274,7 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
   void selectCategory(String category) {
     setState(() {
       selectedCategory = category;
-      currentPage = 2;
+      currentPage = 3;
       searchController.text = category == 'Semua' ? '' : category;
       message = '';
     });
@@ -294,8 +294,8 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
     final titles = [
       'MusicFli',
       'Kategori Musik',
-      'Pencarian Lagu',
       'Favourite Saya',
+      'Pencarian Lagu',
     ];
 
     return Container(
@@ -339,7 +339,7 @@ class _MusicPlayerPageState extends State<MusicPlayerPage> {
               ],
             ),
           ),
-          if (currentPage != 2)
+          if (currentPage != 3)
             GestureDetector(
               onTap: openSearch,
               child: const Padding(
